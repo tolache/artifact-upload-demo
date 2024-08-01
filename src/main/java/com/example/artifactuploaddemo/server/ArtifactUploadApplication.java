@@ -1,10 +1,10 @@
-package com.example.artifact_upload_demo;
+package com.example.artifactuploaddemo.server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ArtifactUploadDemoApplication {
+public class ArtifactUploadApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ArtifactUploadDemoApplication.class, args);

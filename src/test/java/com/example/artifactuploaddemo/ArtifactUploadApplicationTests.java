@@ -1,10 +1,10 @@
-package com.example.artifact_upload_demo;
+package com.example.artifactuploaddemo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ArtifactUploadDemoApplicationTests {
+class ArtifactUploadApplicationTests {
 
 	@Test
 	void contextLoads() {
