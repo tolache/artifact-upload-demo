@@ -11,12 +11,7 @@ This is a simple Spring Boot client-server application for PoC/demo upload of th
 
 ### Start The Server
 
-1. Configure Artifact folder:
-   1. Edit `src/main/resources/application.properties`.
-   2. Specify the path using the `file.upload-dir` property. Escape `:` and `\` in Windows paths with `\`.  
-      Examples:  
-      `file.upload-dir=\\\\servername\\c$\\artifact-upload-demo`  
-      `file.upload-dir=C\:\\artifact-upload-demo`
+1. Edit `src/main/resources/application.properties` to configure artifact folder (`file.upload-dir`) and port (`server.port`, option).
 2. Start the server:
 
 ```Shell
@@ -36,8 +31,10 @@ mvn clean install
 2. Run the client (upload a file):
 
 ```Shell
+SERVER_URL="http://localhost:8080" # Change if needed
 CLASS_PATH="target/classes;target/dependency/httpclient-4.5.13.jar;target/dependency/httpcore-4.4.16.jar;target/dependency/httpmime-4.5.13.jar;target/dependency/commons-logging-1.2.jar"
-java -cp $CLASS_PATH com.example.artifactuploaddemo.client.ArtifactUploadClient <filename_to_upload>
+CLIENT_CLASS="com.example.artifactuploaddemo.client.ArtifactUploadClient"
+java -cp $CLASS_PATH $CLIENT_CLASS $SERVER_URL <filename_to_upload>
 ```
 
 #### On Windows
@@ -51,8 +48,10 @@ mvn clean install
 2. Run the client (upload a file):
 
 ```PowerShell
+$serverUrl = "http://localhost:8080" # Change if needed
 $classPath = "target/classes;target/dependency/httpclient-4.5.13.jar;target/dependency/httpcore-4.4.16.jar;target/dependency/httpmime-4.5.13.jar;target/dependency/commons-logging-1.2.jar"
-java.exe -cp $classPath com.example.artifactuploaddemo.client.ArtifactUploadClient <filename_to_upload>
+$clientClass = "com.example.artifactuploaddemo.client.ArtifactUploadClient"
+java.exe -cp $classPath $clientClass $serverUrl <filename_to_upload>
 ```
 
 ## Development
