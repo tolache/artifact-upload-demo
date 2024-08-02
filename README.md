@@ -2,9 +2,46 @@
 
 # Getting Started
 
-1. Download and install dependencies: `mvn clean install`
-2. Start the server: `mvn spring-boot:run`
-3. Start the client: `java -cp "target/classes;target/dependency/httpclient-4.5.13.jar;target/dependency/httpcore-4.4.16.jar;target/dependency/httpmime-4.5.13.jar;target/dependency/commons-logging-1.2.jar" com.example.artifactuploaddemo.client.ArtifactUploadClient <filename_to_upload>`
+## Start The Server
+
+1. Start the server:
+
+```Shell
+mvn spring-boot:run
+```
+
+## Run The Client
+
+### On Linux
+
+1. Download and install dependencies:
+
+```Shell
+mvn clean install
+```
+
+2. Run the client:
+
+```Shell
+CLASS_PATH="target/classes;target/dependency/httpclient-4.5.13.jar;target/dependency/httpcore-4.4.16.jar;target/dependency/httpmime-4.5.13.jar;target/dependency/commons-logging-1.2.jar"
+java -cp $CLASS_PATH com.example.artifactuploaddemo.client.ArtifactUploadClient <filename_to_upload>
+```
+
+### On Windows
+
+1. Download and install dependencies:
+
+```PowerShell
+mvn clean install
+```
+
+2. Run the client:
+
+```PowerShell
+$classPath = "target/classes;target/dependency/httpclient-4.5.13.jar;target/dependency/httpcore-4.4.16.jar;target/dependency/httpmime-4.5.13.jar;target/dependency/commons-logging-1.2.jar"
+java.exe -cp $classPath com.example.artifactuploaddemo.client.ArtifactUploadClient <filename_to_upload>
+```
+
 
 ### Reference Documentation
 For further reference, please consider the following sections:
