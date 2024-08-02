@@ -15,8 +15,20 @@ import java.io.IOException;
 public class ArtifactUploadClient {
 
     public static void main(String[] args) {
+        if (args.length < 1) {
+            System.out.println("Usage: java FileUploadClient <file-path>");
+            System.exit(1);
+        }
+
+        String filePath = args[0];
+        File file = new File(filePath);
+
+        if (!file.exists()) {
+            System.out.println("File does not exist: " + filePath);
+            System.exit(1);
+        }
+
         String serverUrl = "http://localhost:8080/upload";
-        File file = new File("path/to/your/file.txt");
 
         try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
             HttpPost uploadFile = new HttpPost(serverUrl);
