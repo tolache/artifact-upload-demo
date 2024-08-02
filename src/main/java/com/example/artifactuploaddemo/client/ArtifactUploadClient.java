@@ -15,12 +15,13 @@ import java.io.IOException;
 public class ArtifactUploadClient {
 
     public static void main(String[] args) {
-        if (args.length < 1) {
-            System.out.println("Usage: java FileUploadClient <file-path>");
+        if (args.length < 2) {
+            System.out.println("Usage: java com.example.artifactuploaddemo.client.ArtifactUploadClient <server-url> <file-path>");
             System.exit(1);
         }
 
-        String filePath = args[0];
+        String serverOrigin = args[0];
+        String filePath = args[1];
         File file = new File(filePath);
 
         if (!file.exists()) {
@@ -28,7 +29,7 @@ public class ArtifactUploadClient {
             System.exit(1);
         }
 
-        String serverUrl = "http://localhost:8080/upload";
+        String serverUrl = serverOrigin + "/upload";
 
         try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
             HttpPost uploadFile = new HttpPost(serverUrl);
