@@ -1,6 +1,6 @@
 # Artifact Upload Demo
 
-This is a simple SpringBoot client-server application for PoC/demo upload of the files from client to server.
+This is a simple Spring Boot client-server application for PoC/demo upload of the files from client to server.
 
 ## Features
 
