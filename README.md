@@ -11,7 +11,7 @@ This is a simple Spring Boot client-server application for PoC/demo upload of th
 
 ### Start The Server
 
-1. Edit `src/main/resources/application.properties` to configure artifact folder (`file.upload-dir`) and port (`server.port`, option).
+1. Edit `src/main/resources/application.properties` to configure artifact folder (`file.upload-dir`) and port (`server.port`, optional).
 2. Start the server:
 
 ```Shell
