@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ArtifactUploadApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ArtifactUploadDemoApplication.class, args);
+		SpringApplication.run(ArtifactUploadApplication.class, args);
 	}
 
 }
