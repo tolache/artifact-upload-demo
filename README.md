@@ -1,8 +1,15 @@
-# Read Me First
+# Artifact Upload Demo
 
-# Getting Started
+This is a simple SpringBoot client-server application for PoC/demo upload of the files from client to server.
 
-## Start The Server
+## Features
+
+* Run a Java/Spring Boot/Tomcat server to accepts the incoming connections.
+* Run a command-line client that uploads the specified file and exits. 
+
+## Quick Start
+
+### Start The Server
 
 1. Start the server:
 
@@ -10,9 +17,9 @@
 mvn spring-boot:run
 ```
 
-## Run The Client
+### Run The Client
 
-### On Linux
+#### On Linux
 
 1. Download and install dependencies:
 
@@ -20,14 +27,14 @@ mvn spring-boot:run
 mvn clean install
 ```
 
-2. Run the client:
+2. Run the client (upload a file):
 
 ```Shell
 CLASS_PATH="target/classes;target/dependency/httpclient-4.5.13.jar;target/dependency/httpcore-4.4.16.jar;target/dependency/httpmime-4.5.13.jar;target/dependency/commons-logging-1.2.jar"
 java -cp $CLASS_PATH com.example.artifactuploaddemo.client.ArtifactUploadClient <filename_to_upload>
 ```
 
-### On Windows
+#### On Windows
 
 1. Download and install dependencies:
 
@@ -35,13 +42,16 @@ java -cp $CLASS_PATH com.example.artifactuploaddemo.client.ArtifactUploadClient 
 mvn clean install
 ```
 
-2. Run the client:
+2. Run the client (upload a file):
 
 ```PowerShell
 $classPath = "target/classes;target/dependency/httpclient-4.5.13.jar;target/dependency/httpcore-4.4.16.jar;target/dependency/httpmime-4.5.13.jar;target/dependency/commons-logging-1.2.jar"
 java.exe -cp $classPath com.example.artifactuploaddemo.client.ArtifactUploadClient <filename_to_upload>
 ```
 
+## Development
+
+This section is generated automatically by [Spring Initializr](https://start.spring.io/).
 
 ### Reference Documentation
 For further reference, please consider the following sections:
