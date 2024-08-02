@@ -11,7 +11,11 @@ This is a simple SpringBoot client-server application for PoC/demo upload of the
 
 ### Start The Server
 
-1. Start the server:
+1. Configure Artifact folder:
+   1. Edit `src/main/resources/application.properties`.
+   2. Specify the path using the `file.upload-dir` property. Escape `:` and `\` in Windows paths with `\`  
+      Example: `file.upload-dir=\\\\localhost\\c$\\tmp\\artifact-upload-demo`
+2. Start the server:
 
 ```Shell
 mvn spring-boot:run
