@@ -11,7 +11,9 @@ This is a simple Spring Boot client-server application for PoC/demo upload of th
 
 ### Start The Server
 
-1. Edit `src/main/resources/application.properties` to configure artifact folder (`file.upload-dir`) and port (`server.port`, optional).
+1. Edit `src/main/resources/application.properties` to configure
+  - destination artifact directory (`file.upload-dir`). Make sure the specified directory exists.
+  - (optional) server port (`server.port`).
 2. Start the server:
 
 ```Shell
@@ -32,7 +34,7 @@ mvn clean install
 
 ```Shell
 SERVER_URL="http://localhost:8080" # Change if needed
-CLASS_PATH="target/classes;target/dependency/httpclient-4.5.13.jar;target/dependency/httpcore-4.4.16.jar;target/dependency/httpmime-4.5.13.jar;target/dependency/commons-logging-1.2.jar"
+CLASS_PATH="target/classes:target/dependency/httpclient-4.5.13.jar:target/dependency/httpcore-4.4.16.jar:target/dependency/httpmime-4.5.13.jar:target/dependency/commons-logging-1.2.jar"
 CLIENT_CLASS="com.example.artifactuploaddemo.client.ArtifactUploadClient"
 java -cp $CLASS_PATH $CLIENT_CLASS $SERVER_URL <filename_to_upload>
 ```
